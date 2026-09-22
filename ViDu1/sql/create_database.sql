@@ -1,0 +1,3 @@
+IF DB_ID('webst4') IS NULL
+    CREATE DATABASE webst4;
+GO

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="~{layouts/layout :: head('Trang chủ')}"></head>
+<body>
+<header th:replace="~{fragments/header :: header}"></header>
+<main class="container">
+    <section class="panel">
+        <h1>Ví dụ 1 - Spring Security Login</h1>
+        <p>Đăng nhập bằng email, lưu trạng thái bằng session và hiển thị thông tin tài khoản ở header.</p>
+        <p sec:authorize="!isAuthenticated()"><a class="btn primary" th:href="@{/login}">Đi tới đăng nhập</a></p>
+    </section>
+</main>
+</body>
+</html>
