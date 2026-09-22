@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="vi"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+<head>
+    <title>Trang chủ</title>
+</head>
+<body>
+<main layout:fragment="content">
+    <section class="card">
+        <h1>Ví dụ 2 - Custom Login</h1>
+        <p>
+            Xin chào
+            <strong th:text="${#authentication.principal.fullName}">User</strong>
+        </p>
+        <p>Bạn có thể đăng nhập bằng username hoặc email.</p>
+    </section>
+</main>
+</body>
+</html>

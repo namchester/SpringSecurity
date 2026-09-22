@@ -1,0 +1,3 @@
+IF DB_ID('webst9') IS NULL
+    CREATE DATABASE webst9;
+GO
