@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layouts/layout :: head('Lỗi')}"></head>
+<body>
+<header th:replace="~{fragments/header :: header}"></header>
+<main class="container narrow">
+    <section class="panel">
+        <h1>Đã xảy ra lỗi</h1>
+        <p th:text="${message != null ? message : 'Không thể xử lý yêu cầu hiện tại.'}">
+            Không thể xử lý yêu cầu hiện tại.
+        </p>
+        <a class="btn secondary" th:href="@{/}">Về trang chủ</a>
+    </section>
+</main>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+</body>
+</html>

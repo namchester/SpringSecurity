@@ -1,2 +1,13 @@
 ﻿.idea/
+.vscode/
 *.iml
+**/.env
+**/target/
+**/data/
+**/uploads/
+**/*.log
+.classpath
+.project
+.settings/
+Thumbs.db
+.DS_Store

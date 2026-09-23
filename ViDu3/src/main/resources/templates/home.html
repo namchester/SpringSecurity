@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="~{layouts/layout :: head('Dashboard')}"></head>
+<body>
+<header th:replace="~{fragments/header :: header}"></header>
+
+<main class="container">
+    <h1>Dashboard</h1>
+
+    <div th:if="${success}" class="alert success" th:text="${success}"></div>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Total Users</h3>
+            <strong th:text="${userCount}">0</strong>
+        </div>
+        <div class="card">
+            <h3>Total Products</h3>
+            <strong th:text="${productCount}">0</strong>
+        </div>
+    </div>
+
+    <div class="quick-links">
+        <a class="btn primary" sec:authorize="isAuthenticated()" th:href="@{/products}">
+            Quản lý Products
+        </a>
+        <a class="btn primary" sec:authorize="hasRole('ADMIN')" th:href="@{/users}">
+            Quản lý Users
+        </a>
+        <a class="btn secondary" sec:authorize="!isAuthenticated()" th:href="@{/login}">
+            Đăng nhập
+        </a>
+        <a class="btn secondary" sec:authorize="!isAuthenticated()" th:href="@{/register}">
+            Đăng ký
+        </a>
+    </div>
+</main>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+</body>
+</html>

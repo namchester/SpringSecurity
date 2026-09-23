@@ -1,0 +1,2 @@
+IF DB_ID(N'webst3') IS NULL
+    EXEC(N'CREATE DATABASE webst3');

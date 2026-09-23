@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layouts/layout :: head('Đăng nhập')}"></head>
+<body class="auth-page">
+<div class="auth-card">
+    <h1>IOTSTAR SHOP</h1>
+    <h2>Đăng nhập</h2>
+
+    <div class="alert error" th:if="${param.error}">
+        Username/password không đúng hoặc tài khoản chưa được xác thực.
+    </div>
+    <div class="alert success" th:if="${param.logout}">Bạn đã đăng xuất.</div>
+    <div class="alert success" th:if="${success}" th:text="${success}"></div>
+
+    <form th:action="@{/login}" method="post">
+        <label>Username</label>
+        <input type="text" name="username" required autofocus>
+
+        <label>Password</label>
+        <input type="password" name="password" required>
+
+        <button class="btn primary full" type="submit">Đăng nhập</button>
+    </form>
+
+    <p><a th:href="@{/register}">Tạo tài khoản</a></p>
+    <p><a th:href="@{/forgot-password}">Quên mật khẩu?</a></p>
+    <p class="hint">Tài khoản mẫu: user01 / 123456</p>
+</div>
+</body>
+</html>
